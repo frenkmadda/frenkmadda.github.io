@@ -1,2 +1,2 @@
-# webtutorial.github.io
-Web app with random quotes and dog images made for learning purpose
+# frenkmadda.github.io
+Web app with random quotes,jokes and dogs images made for learning purpose
