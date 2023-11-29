@@ -1,19 +1,11 @@
-
 let quoteDiv = document.getElementById('quotes')
-fetch('https://api.kanye.rest')
-.then(res=>res.json())
-.then(quote=>{
-    quoteDiv.innerHTML += `<p> ${quote.quote} </p>`
-})
-
-let quoteButton = document.getElementById('give-quote')
-quoteButton.addEventListener('click',evt=>{
-    fetch('https://api.kanye.rest')
-    .then(res=>res.json())
-    .then(quote=>{
-        quoteDiv.innerHTML = `<p> ${quote.quote} </p>`
-    })
-})
+fetch("https://v2.jokeapi.dev/joke/Any?type=single&idRange=0-319")
+    .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        quoteDiv.innerHTML = data.joke;
+      });
 
 let dogButton = document.getElementById('give-dog')
 dogButton.addEventListener('click',evt=>{
@@ -42,6 +34,7 @@ dogButton.addEventListener('click',evt=>{
         img.src = imageUrl;
     })
         });
+
 let jokeButton = document.getElementById('give-joke')
 jokeButton.addEventListener('click',evt=>{
     fetch("https://v2.jokeapi.dev/joke/Any?type=single&idRange=0-319")
