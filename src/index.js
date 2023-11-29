@@ -21,10 +21,27 @@ dogButton.addEventListener('click',evt=>{
     fetch('https://dog.ceo/api/breeds/image/random')
     .then(res=>res.json())
     .then(dog=>{
-            dogDiv.innerHTML = `<h3>Take this dog to TUUUM 🐶 🐶 🐶</h3>
-            <img src="${dog.message}" alt="can't fetch a doggy 🐶"/>`
-        });
+        const imageUrl = dog.message;
+
+        // Verifica se l'URL dell'immagine è valido
+        const img = new Image();
+        img.onload = function () {
+            // L'immagine è stata caricata con successo
+            dogDiv.innerHTML = `
+                <h3>Take this dog to TUUUM 🐶 🐶 🐶</h3>
+                <img src="${imageUrl}" style="width:400px; height:300px alt="doggy 🐶"/>
+            `;
+        };
+        img.onerror = function () {
+            // L'immagine non è stata caricata con successo, usa un'immagine locale di default
+            dogDiv.innerHTML = `
+                <h3>The King decided to visit you ❤️❤️❤️</h3>
+                <img src="src/choppy.jpg" style="width:400px; height:300px alt="default doggy 🐶"/>
+            `;
+        };
+        img.src = imageUrl;
     })
+        });
 let jokeButton = document.getElementById('give-joke')
 jokeButton.addEventListener('click',evt=>{
     fetch("https://v2.jokeapi.dev/joke/Any?type=single&idRange=0-319")
