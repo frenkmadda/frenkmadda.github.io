@@ -25,6 +25,15 @@ dogButton.addEventListener('click',evt=>{
             <img src="${dog.message}" alt="can't fetch a doggy 🐶"/>`
         });
     })
-
+let jokeButton = document.getElementById('give-joke')
+jokeButton.addEventListener('click',evt=>{
+    fetch("https://v2.jokeapi.dev/joke/Any?type=single&idRange=0-319")
+    .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        quoteDiv.innerHTML = data.joke;
+      });
+})
   
 
