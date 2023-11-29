@@ -1,2 +1,3 @@
 # frenkmadda.github.io
-Web app with random quotes,jokes and dogs images made for learning purpose
+Web app with random jokes and dogs images.
+Made for learning purpose
