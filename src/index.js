@@ -25,14 +25,6 @@ dogButton.addEventListener('click',evt=>{
             <img src="${dog.message}" alt="can't fetch a doggy 🐶"/>`
         });
     })
-    const JokeAPI = require('sv443-joke-api');
-    let jokeButton = document.getElementById('give-joke');
-    jokeButton.addEventListener('click', evt => {
-      JokeAPI.getJokes()
-      .then((res) => res.json())
-      .then((data) => {
-      console.log(data)
-  })
-})
+
   
 
