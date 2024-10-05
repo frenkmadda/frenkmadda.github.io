@@ -1,4 +1,7 @@
-# Dog and Puns random Generator
-Web app with random jokes and dogs images.\
+# Random Dog Generator
+Web app with random dogs images.\
 Made for learning purpose\
-You can try it by visiting https://frenkmadda.github.io/
+### Warning
+The puns API is no longer available.\
+
+You can try the dog generator by visiting https://frenkmadda.github.io/
